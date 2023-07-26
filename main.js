@@ -172,6 +172,7 @@ var product = {
 };
 
 function render() {
+  document.getElementById("products").innerHTML = ""
   for (let i in product.data) {
     document.getElementById("products").insertAdjacentHTML(
       "beforeend",
