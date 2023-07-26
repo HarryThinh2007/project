@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VNS - VietNamShoes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Adamina"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <a href="home.html"><img src="logo.png" alt="" /></a>
+      </div>
+      <div class="header-mid">
+        <p class="selection" onclick="render()">New & Featured</p>
+        <p class="selection" onclick="renderMen()">Men</p>
+        <p class="selection" onclick="renderWomen()">Women</p>
+        <p class="selection" onclick="renderKid()">Kids</p>
+      </div>
+      <div class="header-right">
+        <div class="searchbar">
+          <button class="searchbutton" id="searchbutton">
+            <i class="fa-solid fa-magnifying-glass emoji"></i>
+          </button>
+          <input
+            type="text"
+            placeholder="Search"
+            class="search"
+            id="searchInput"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn btn-user"
+          data-bs-toggle="modal"
+          data-bs-target="#sign-up"
+        >
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="btn-cart" onclick="signInAccount()">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- SIGN UP -->
+    <div
+      class="modal fade"
+      id="sign-up"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >Username:</label
+                >
+                <input type="text" class="form-control" id="sign-up-name" />
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >Email:</label
+                >
+                <input type="text" class="form-control" id="sign-up-email" />
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >Password:</label
+                >
+                <input type="password" class="form-control" id="sign-up-pass" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <p>
+              Already have an account? Log in
+              <span
+                data-bs-dismiss="modal"
+                data-bs-toggle="modal"
+                data-bs-target="#sign-in"
+                >HERE</span
+              >
+            </p>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              onclick="emptyInput()"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              id="button-sign-up"
+              class="btn btn-primary"
+            >
+              Create account
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGN IN -->
+    <div
+      class="modal fade"
+      id="sign-in"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign in</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >Email:</label
+                >
+                <input type="text" class="form-control" id="sign-in-email" />
+              </div>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >Password:</label
+                >
+                <input type="password" class="form-control" id="sign-in-pass" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              onclick="emptyValue()"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              data-bs-dismiss="modal"
+              id="button-sign-in"
+              class="btn btn-primary"
+            >
+              Log in
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slides">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://i.ytimg.com/vi/7bspjGKCi3g/maxresdefault.jpg"
+              class="d-block w-100"
+              alt="...."
+            />
+          </div>
+          <div class="carousel-item">
+            <img src="media.png" class="d-block w-100" alt="...." />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://img.cdn-pictorem.com/uploads/metalbrush/1/metalbrush1_418365.jpg"
+              class="d-block w-100"
+              alt="...."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="body">
+      <h2>We got the shoes you need!</h2>
+      <div class="container_product" id="products"></div>
+      <div class="footer">
+        <div class="footer-left">
+          <i class="fa-solid fa-location-dot"></i>
+          <h6>VietNam</h6>
+        </div>
+        <div class="footer-mid">
+          <h6>© 2023 VNS, Inc. All Rights Reserved</h6>
+        </div>
+        <div class="footer-right">
+          <button class="btn-media">
+            <i class="fa-brands fa-twitter"></i>
+          </button>
+          <button class="btn-media">
+            <i class="fa-brands fa-facebook-f"></i>
+          </button>
+          <button class="btn-media">
+            <i class="fa-brands fa-youtube"></i>
+          </button>
+          <button class="btn-media">
+            <i class="fa-brands fa-instagram"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+  <!-- <script src="product.js"></script> -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>

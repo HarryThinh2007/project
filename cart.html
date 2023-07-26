@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VNS Bag</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Adamina"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <a href="homemain.html"><img src="logo.png" alt="" /></a>
+      </div>
+      <div class="header-mid">
+        <p class="selection">New & Featured</p>
+        <p class="selection">Men</p>
+        <p class="selection">Women</p>
+        <p class="selection">Kids</p>
+      </div>
+      <div class="header-right">
+        <div class="searchbar">
+          <button class="searchbutton" id="searchbutton">
+            <i class="fa-solid fa-magnifying-glass emoji"></i>
+          </button>
+          <input
+            type="text"
+            placeholder="Search"
+            class="search"
+            id="searchInput"
+          />
+        </div>
+        <button class="btn-user"><i class="fa-solid fa-user"></i></button>
+        <button class="btn-cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </button>
+      </div>
+    </div>
+    <div class="cart-container">
+      <h2 class="title">Bag</h2>
+      <div class="body-cart">
+        <div id="product" class="container_product"></div>
+      </div>
+      <div class="total_price">
+        <h1 id="total-price"></h1>
+        <div class="buttons">
+          <button type="button" class="btn btn-success" onclick="success()">
+            Purchase
+          </button>
+          <a href="cart.html">
+            <button id="clear-button" class="btn btn-danger">
+              Clear List
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-left">
+        <i class="fa-solid fa-location-dot"></i>
+        <h6>VietNam</h6>
+      </div>
+      <div class="footer-mid">
+        <h6>© 2023 VNS, Inc. All Rights Reserved</h6>
+      </div>
+      <div class="footer-right">
+        <button class="btn-media">
+          <i class="fa-brands fa-twitter"></i>
+        </button>
+        <button class="btn-media">
+          <i class="fa-brands fa-facebook-f"></i>
+        </button>
+        <button class="btn-media">
+          <i class="fa-brands fa-youtube"></i>
+        </button>
+        <button class="btn-media">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+
+  <script src="cart.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+</html>
