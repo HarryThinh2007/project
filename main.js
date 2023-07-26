@@ -144,7 +144,7 @@ var product = {
       image:
         "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f52549ad-24d9-4c23-98fa-7052c11e47bc/pegasus-40-road-running-shoes-50CtF7.png",
       name: "Nike Pegasus 40 Premium",
-      price: 173.78,
+      price: 174.0,
       type: "Men",
     },
     {
@@ -236,7 +236,7 @@ function renderMen() {
               />
               <h5 id="name${i}" class="card_name">${product.data[i].name}</h5>
               <h6 id="price${i}" class="card_details">${product.data[i].type}</h6>
-              <h6 id="type${i}"  class="card_price">${product.data[i].price}</h6>
+              <h6 id="type${i}"  class="card_price">$${product.data[i].price}</h6>
             </div>
           </a>
         `
@@ -261,7 +261,7 @@ function renderKid() {
               />
               <h5 id="name${i}" class="card_name">${product.data[i].name}</h5>
               <h6 id="price${i}" class="card_details">${product.data[i].type}</h6>
-              <h6 id="type${i}"  class="card_price">${product.data[i].price}</h6>
+              <h6 id="type${i}"  class="card_price">$${product.data[i].price}</h6>
             </div>
           </a>
         `
