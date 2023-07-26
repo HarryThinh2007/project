@@ -70,6 +70,7 @@ signinInfo.addEventListener("click", function () {
     alert("Mật khẩu bạn đã nhập không chính xác.");
     passwordSignIn.value = "";
   } else {
+    window.location.assign("http://127.0.0.1:5500/project/productmain.html")
     alert(`HELLO ${user.name}`);
     passwordSignIn.value = "";
   }

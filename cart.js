@@ -45,11 +45,11 @@ function success() {
 const clearButton = document.getElementById("clear-button");
 clearButton.addEventListener("click", function () {
   clearList();
-  renderCart();
 });
 
 function clearList() {
   cartList = [];
   localStorage.setItem("cart", JSON.stringify(cartList));
-
+  document.getElementById("product").innerHTML = "";
+  renderCart();
 }
